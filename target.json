@@ -1,0 +1,143 @@
+{
+  "name": "st-nucleo-f103rb-gcc",
+  "version": "0.0.1",
+  "description": "Unofficial mbed build target for the mbed ST Nucleo f103rb development board, using gcc toolchain",
+  "homepage": "https://github.com/Sandyman/target-st-nucleo-f103rb-gcc",
+  "repository": {
+    "url": "git@github.com:Sandyman/target-st-nucleo-f103rb-gcc.git",
+    "type": "git"
+  },
+  "licenses": [
+    {
+      "url": "https://spdx.org/licenses/Apache-2.0",
+      "type": "Apache-2.0"
+    }
+  ],
+  "inherits": {
+    "mbed-gcc": "*"
+  },
+  "keywords": [
+    "mbed-target:nucleo-f103rb",
+    "mbed-official",
+    "nucleo-f103rb",
+    "nucleo",
+    "x-nucleo",
+    "ST",
+    "STM",
+    "gcc"
+  ],
+  "similarTo": [
+    "nucleo-f103rb",
+    "f103rb",
+    "f103",
+    "nucleo",
+    "stm32f103rbt6",
+    "stm32f103",
+    "stm32f1",
+    "stm32",
+    "st",
+    "cortex-m4",
+    "armv7-m",
+    "arm",
+    "gcc",
+    "mbed",
+    "stm32f103rb-no-inherit"
+  ],
+  "config": {
+    "mbed-os": {},
+    "cmsis": {
+      "nvic": {
+        "ram_vector_address": "0x20000000",
+        "flash_vector_address": "0x08000000",
+        "user_irq_offset": 16,
+        "user_irq_number": 85
+      }
+    },
+    "uvisor": {
+      "present": 0
+    },
+    "hardware": {
+      "externalClock": "8000000",
+      "internalClock": "16000000",
+      "pins": {
+        "LED1": "PA_5",
+        "LED2": "PA_5",
+        "LED3": "PA_5",
+        "LED4": "PA_5",
+        "USER_BUTTON": "PC_13",
+        "BUTTON1": "PC_13",
+        "SERIAL_TX": "PA_2",
+        "SERIAL_RX": "PA_3",
+        "USBTX": "PA_2",
+        "USBRX": "PA_3",
+        "I2C_SCL": "PB_8",
+        "I2C_SDA": "PB_9",
+        "SPI_MOSI": "PA_7",
+        "SPI_MISO": "PA_6",
+        "SPI_SCK": "PA_5",
+        "SPI_CS": "PB_6",
+        "PWM_OUT": "PB_3",
+        "A0": "PA_0",
+        "A1": "PA_1",
+        "A2": "PA_4",
+        "A3": "PB_0",
+        "A4": "PC_1",
+        "A5": "PC_0",
+        "D0": "PA_3",
+        "D1": "PA_2",
+        "D2": "PA_10",
+        "D3": "PB_3",
+        "D4": "PB_5",
+        "D5": "PB_4",
+        "D6": "PB_10",
+        "D7": "PA_8",
+        "D8": "PA_9",
+        "D9": "PC_7",
+        "D10": "PB_6",
+        "D11": "PA_7",
+        "D12": "PA_6",
+        "D13": "PA_5",
+        "D14": "PB_9",
+        "D15": "PB_8"
+      },
+      "test-pins": {
+        "spi": {
+          "mosi": "SPI_MOSI",
+          "miso": "SPI_MISO",
+          "sclk": "SPI_SCK",
+          "ssel": "SPI_CS"
+        },
+        "i2c": {
+          "sda": "I2C_SDA",
+          "scl": "I2C_SCL"
+        },
+        "serial": {
+          "tx": "PA_9",
+          "rx": "PC_7"
+        }
+      }
+    }
+  },
+  "toolchain": "CMake/toolchain.cmake",
+  "debug": [
+    "valinor",
+    "--target",
+    "stm32f103rb",
+    "$program"
+  ],
+  "scripts": {
+    "debug": [
+      "valinor",
+      "--target",
+      "NUCLEO_F103RB",
+      "$program"
+    ],
+    "test": [
+      "mbed_test_wrapper",
+      "--target",
+      "NUCLEO_F103RB",
+      "$program"
+    ]
+  }
+}
+
