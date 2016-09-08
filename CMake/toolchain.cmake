@@ -11,7 +11,7 @@ set(TARGET_ST_NUCLEO_F103RB_GCC_TOOLCHAIN_INCLUDED 1)
 # definition that you're about to add to rely on the TARGET_LIKE_XXX
 # definitions that yotta provides based on the target.json file.
 #
-add_definitions("-DTARGET_NUCLEO_F103RB -DTARGET_STM32F1")
+add_definitions("-DTARGET_NUCLEO_F103RB -DTARGET_STM32F103RB -DTARGET_STM32F1 -DTARGET_STM -DSTM32F103xB")
 
 # append non-generic flags, and set Nucleo-F103RB-specific link script
 
